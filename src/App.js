@@ -25,7 +25,8 @@ class App extends Component {
     return {
       id: `thing-${Date.now()}`,
       name: '',
-      completed: false
+      completed: false,
+      dueOn: null,
     }
   }
 
@@ -47,19 +48,11 @@ class App extends Component {
     things[thing.id] = null
     this.setState({ things })
   }
- toggleCompleted = (thing) => {
-    thing.completed = !thing.completed
-    const things = {...this.state.things}
-    things[thing.id] = thing
-    this.setState({things})
-  }
 
   render() {
     const actions = {
       saveThing: this.saveThing,
       removeThing: this.removeThing,
-      toggleCompleted: this.toggleCompleted,
-
     }
 
     return (
