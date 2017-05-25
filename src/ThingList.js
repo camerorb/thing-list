@@ -14,17 +14,13 @@ const ThingList = (props) => {
         Object
           .keys(props.things)
           .sort(sortThings)
-          .map(thingId => <Thing
-                            thing={props.things[thingId]}
-                            key={thingId}
-                            {...props}
-                          />)
-
+          .map(thingId => 
+          <Thing
+            thing={props.things[thingId]}
+            key={thingId}
+            {...props} />)
       }
     </ul>
   )
 }
-
-// ['thing-1', 'thing-2', 'thing-3']
-
 export default ThingList
