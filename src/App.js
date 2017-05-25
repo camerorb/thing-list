@@ -4,6 +4,8 @@ import './App.css';
 import Header from './Header'
 import ThingList from './ThingList'
 import AddThingButton from './AddThingButton'
+import SignOut from './SignOut'
+import SignIn from './SignIn'
 import base from './base'
 
 class App extends Component {
@@ -49,20 +51,33 @@ class App extends Component {
     this.setState({ things })
   }
 
-  render() {
+  signedIn = () => {
+    return true
+  }
+
+  renderMain = () => {
     const actions = {
       saveThing: this.saveThing,
       removeThing: this.removeThing,
     }
 
     return (
-      <div className="App">
-        <Header />
+      <div>
+        <SignOut />
         <AddThingButton addThing={this.addThing} />
         <ThingList
           things={this.state.things}
           {...actions}
         />
+      </div>
+    )
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <Header />
+        { this.signedIn() ? this.renderMain() : <SignIn /> }
       </div>
     );
   }
