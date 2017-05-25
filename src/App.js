@@ -48,10 +48,10 @@ class App extends Component {
     this.setState({ things })
   }
  toggleCompleted = (thing) => {
-    thing.completed = !thing.completed;
-    const things = {...this.state.things};
-    things[thing.id] = thing;
-    this.setState({things});
+    thing.completed = !thing.completed
+    const things = {...this.state.things}
+    things[thing.id] = thing
+    this.setState({things})
   }
 
   render() {
