@@ -1,7 +1,7 @@
 {
   "name": "thing-list",
   "version": "0.1.0",
-  "homepage" : "http://camerob.github.io/thing-list",
+  "homepage" : "http://camerorb.github.io/thing-list",
   "private": true,
   "dependencies": {
     "re-base": "^3.0.1",
